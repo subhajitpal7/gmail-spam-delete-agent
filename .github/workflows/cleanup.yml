@@ -26,7 +26,7 @@ jobs:
       - name: Restore credentials and env
         run: |
           mkdir -p credentials
-          echo "${{ secrets.CREDENTIALS_JSON }}" > credentials/credentials.json
+          echo "${{ secrets.CREDENTIALS_JSON }}" > credentials.json
           echo "${{ secrets.CLIENT_SECRET_JSON }}" > credentials/client_secret.json
           echo "${{ secrets.TOKEN_JSON }}" > credentials/token.json
           echo "GOOGLE_API_KEY=${{ secrets.GEMINI_API_KEY }}" > .env
