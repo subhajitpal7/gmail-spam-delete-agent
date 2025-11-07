@@ -29,7 +29,7 @@ jobs:
           echo "${{ secrets.CREDENTIALS_JSON }}" > credentials/credentials.json
           echo "${{ secrets.CLIENT_SECRET_JSON }}" > credentials/client_secret.json
           echo "${{ secrets.TOKEN_JSON }}" > credentials/token.json
-          echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" > .env
+          echo "GOOGLE_API_KEY=${{ secrets.GEMINI_API_KEY }}" > .env
 
       - name: Run cleanup script
         run: uv run python src/gmail_spam_delete_agent/scripts/delete_promotional_emails.py
