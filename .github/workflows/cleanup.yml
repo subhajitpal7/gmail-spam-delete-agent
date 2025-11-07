@@ -1,0 +1,26 @@
+name: Daily Email Cleanup
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # Runs every day at midnight
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install uv
+          uv sync
+
+      - name: Run cleanup script
+        run: uv run python src/gmail_spam_delete_agent/delete_promotional_emails.py

@@ -1,0 +1,33 @@
+[project]
+name = "gmail-spam-delete-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "subhajit pal", email = "subhajitpal7@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "google-api-python-client>=2.186.0",
+    "google-auth>=2.42.1",
+    "google-auth-oauthlib>=1.2.2",
+    "langchain>=1.0.3",
+    "langchain-community>=0.4.1",
+    "langchain-google-community[gmail]>=3.0.0",
+    "langchain-google-genai>=3.0.1",
+    "langchain-google-vertexai>=3.0.2",
+    "langchain-openai>=1.0.2",
+    "langgraph>=1.0.2",
+    "langgraph-prebuilt>=1.0.2",
+    "langgraph-swarm>=0.0.2",
+    "python-dotenv>=1.2.1",
+]
+
+[project.scripts]
+gmail-spam-delete-agent = "gmail_spam_delete_agent:main"
+gmail-clean-inbox-swarm = "gmail_spam_delete_agent.cli_clean_inbox_swarm:main"
+gmail-auth = "gmail_spam_delete_agent.cli_gmail_auth:main"
+
+[build-system]
+requires = ["uv_build>=0.8.14,<0.9.0"]
+build-backend = "uv_build"
