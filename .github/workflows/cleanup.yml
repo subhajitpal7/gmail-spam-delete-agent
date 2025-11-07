@@ -32,4 +32,4 @@ jobs:
           echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" > .env
 
       - name: Run cleanup script
-        run: uv run python src/scripts/gmail_spam_delete_agent/delete_promotional_emails.py
+        run: uv run python src/gmail_spam_delete_agent/scripts/delete_promotional_emails.py
